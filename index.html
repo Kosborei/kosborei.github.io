@@ -10,9 +10,7 @@
 </style>
 </head>
 <body>
-<!-- Removed game-related script -->
 <br>
-<!-- Removed game-related button -->
 <style>
   @keyframes spin {
     0% { transform: rotate(0deg); }
@@ -22,7 +20,7 @@
   .spinning-text {
     display: inline-block;
     animation: spin 5s infinite linear;
-    font-size: 8px; /* Adjust the font size as needed */
+    font-size: 8px;
     transition: color 0s, font 0s;
   }
 </style>
@@ -30,10 +28,8 @@
 function changeTextStyles() {
   var text = document.querySelector('.spinning-text');
   
-  // Array of example fonts
   var fonts = [''];
 
-  // Array of example colors
   var colors = [
     '#000000', '#000080', '#0000FF', '#008000', '#008080', '#00FF00', '#00FFFF',
     '#800000', '#800080', '#808000', '#808080', '#C0C0C0', '#FF0000', '#FF00FF',
@@ -60,16 +56,13 @@ function changeTextStyles() {
     '#F5F5F5', '#FFFF00', '#9ACD32'
   ];
 
-  // Randomly select a font and color
   var randomFont = fonts[Math.floor(Math.random() * fonts.length)];
   var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
-  // Apply the random styles
   text.style.fontFamily = randomFont;
   text.style.color = randomColor;
 }
 
-// Change text styles every 5 seconds
 setInterval(changeTextStyles, 1000);
 </script>
 </head>
