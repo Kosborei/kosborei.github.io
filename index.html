@@ -1,76 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imperial Kosborei</title>
 <style>
-  canvas {
-    border:1px solid #d3d3d3;
-    background-color: #f1f1f1;
-  }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #1a1a1a;
+        color: #f1f1f1;
+    }
+    header {
+        background-color: #111;
+        padding: 20px;
+        text-align: center;
+        font-size: 2em;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        background-color: #222;
+    }
+    nav a {
+        color: #f1f1f1;
+        text-decoration: none;
+        padding: 15px 20px;
+        display: block;
+    }
+    nav a:hover {
+        background-color: #333;
+    }
+    section {
+        padding: 20px;
+        display: none;
+    }
+    section.active {
+        display: block;
+    }
+    footer {
+        background-color: #111;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
 </style>
 </head>
 <body>
-<br>
-<style>
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
 
-  .spinning-text {
-    display: inline-block;
-    animation: spin 5s infinite linear;
-    font-size: 8px;
-    transition: color 0s, font 0s;
-  }
-</style>
-<script>
-function changeTextStyles() {
-  var text = document.querySelector('.spinning-text');
-  
-  var fonts = [''];
+<header>Imperial Kosborei</header>
 
-  var colors = [
-    '#000000', '#000080', '#0000FF', '#008000', '#008080', '#00FF00', '#00FFFF',
-    '#800000', '#800080', '#808000', '#808080', '#C0C0C0', '#FF0000', '#FF00FF',
-    '#FFFF00', '#FFFFFF', '#F0F8FF', '#FAEBD7', '#00FFFF', '#7FFFD4', '#F0FFFF',
-    '#F5F5DC', '#FFE4C4', '#000000', '#FFEBCD', '#0000FF', '#8A2BE2', '#A52A2A',
-    '#DEB887', '#5F9EA0', '#7FFF00', '#D2691E', '#FF7F50', '#6495ED', '#FFF8DC',
-    '#DC143C', '#00FFFF', '#00008B', '#008B8B', '#B8860B', '#A9A9A9', '#006400',
-    '#BDB76B', '#8B008B', '#556B2F', '#FF8C00', '#9932CC', '#8B0000', '#E9967A',
-    '#8FBC8F', '#483D8B', '#2F4F4F', '#00CED1', '#9400D3', '#FF1493', '#00BFFF',
-    '#696969', '#1E90FF', '#B22222', '#FFFAF0', '#228B22', '#FF00FF', '#DCDCDC',
-    '#F8F8FF', '#FFD700', '#DAA520', '#808080', '#008000', '#ADFF2F', '#808000',
-    '#FF69B4', '#CD5C5C', '#4B0082', '#FFFFF0', '#F0E68C', '#E6E6FA', '#FFF0F5',
-    '#7CFC00', '#FFFACD', '#ADD8E6', '#F08080', '#E0FFFF', '#FAFAD2', '#D3D3D3',
-    '#90EE90', '#FFB6C1', '#FFA07A', '#20B2AA', '#87CEFA', '#778899', '#B0C4DE',
-    '#FFFFE0', '#00FF00', '#32CD32', '#FAF0E6', '#FF00FF', '#800000', '#66CDAA',
-    '#0000CD', '#BA55D3', '#9370DB', '#3CB371', '#7B68EE', '#00FA9A', '#48D1CC',
-    '#C71585', '#191970', '#F5FFFA', '#FFE4E1', '#FFE4B5', '#FFDEAD', '#000080',
-    '#FDF5E6', '#808080', '#008000', '#6B8E23', '#FFA500', '#FF4500', '#DA70D6',
-    '#EEE8AA', '#98FB98', '#AFEEEE', '#DB7093', '#FFEFD5', '#FFDAB9', '#CD853F',
-    '#FFC0CB', '#DDA0DD', '#B0E0E6', '#800080', '#FF0000', '#BC8F8F', '#4169E1',
-    '#8B4513', '#FA8072', '#F4A460', '#2E8B57', '#FFF5EE', '#A0522D', '#C0C0C0',
-    '#87CEEB', '#6A5ACD', '#708090', '#FFFAFA', '#00FF7F', '#4682B4', '#D2B48C',
-    '#008080', '#D8BFD8', '#FF6347', '#40E0D0', '#EE82EE', '#F5DEB3', '#FFFFFF',
-    '#F5F5F5', '#FFFF00', '#9ACD32'
-  ];
+<nav>
+    <a href="#" onclick="showTab('info')">Info</a>
+    <a href="#" onclick="showTab('leadership')">Leadership</a>
+    <a href="#" onclick="showTab('history')">History</a>
+    <a href="#" onclick="showTab('netherbot')">NetherB0T</a>
+    <a href="#" onclick="showTab('nsea')">NSea Client</a>
+    <a href="https://discord.gg/TFF7kTY723" target="_blank">Join Discord</a>
+</nav>
 
-  var randomFont = fonts[Math.floor(Math.random() * fonts.length)];
-  var randomColor = colors[Math.floor(Math.random() * colors.length)];
+<section id="info" class="active">
+    <p>Kosborei was a group founded in 2023. Currently we span across 5 servers with a track record of never losing 😘</p>
+</section>
 
-  text.style.fontFamily = randomFont;
-  text.style.color = randomColor;
-}
+<section id="leadership">
+    <h2>Leadership</h2>
 
-setInterval(changeTextStyles, 1000);
-</script>
-</head>
-<body>
-  <p><span class="spinning-text">free kits where</span></p>
-</body>
-</html>
-<p>commands:</p>
+    <h3>Leader</h3>
+    <ul>
+        <li>NC970</li>
+    </ul>
+
+    <h3>Co-leader</h3>
+    <ul>
+        <li>Trojaty</li>
+    </ul>
+
+    <h3>Senate</h3>
+    <ul>
+        <li>Cubofg</li>
+        <li>Mekmekmek</li>
+        <li>Advik555</li>
+    </ul>
+
+    <h3>Commander</h3>
+    <ul>
+        <li>Sillycat</li>
+        <li>Martynukzzz</li>
+        <li>Woofer</li>
+    </ul>
+
+    <h3>Notable Members</h3>
+    <ul>
+        <li>Fastvincent1</li>
+        <li>Reclamationem</li>
+        <li>Craftin247 (also known as Tyler Robinson; the person who shot Charlie Kirk was a recruit)</li>
+    </ul>
+</section>
+
+
+<section id="history">
+    <h2>History of Kosborei</h2>
+
+    <table class="infobox" style="float: right; margin-left: 20px; width: 250px;">
+        <tr>
+            <th colspan="2"><img src="logo.png" alt="Kosborei Logo" style="width:100%;"></th>
+        </tr>
+        <tr>
+            <th>Founded</th>
+            <td>3 years ago</td>
+        </tr>
+        <tr>
+            <th>Membership</th>
+            <td>750+</td>
+        </tr>
+        <tr>
+            <th>Alliances</th>
+            <td>Dacia, 555, Imperials, Mafiarusa</td>
+        </tr>
+        <tr>
+            <th>Enemies</th>
+            <td>Team Payback, Void, TSR, Cosa Nostra, Spawn Masons</td>
+        </tr>
+        <tr>
+            <th>Server Presence</th>
+            <td>8B8T, 6B6T, 0B0T, 2B2T, Constantiam</td>
+        </tr>
+    </table>
+
+    <p>Kosborei has a long history from its founding three years ago. There have been many groups opposing it from the beginning. It started as a group to maintain spawn due to a mass influx of new players attempting to start their own groups or grief/repair spawn. This massively disrupted the balance in spawn, as Kosborei repaired the majority of areas and took over spawn with custom logos.</p>
+
+    <h3>First War on Payback</h3>
+    <p>Kosborei was attacked by a newgen group named Team Payback. They attempted to grief the Kosborei End logo when it was formally known as Mischief/Military, featuring a giant "M" logo in End spawn made from nine-chunk blocks of obsidian and crying obsidian, with around 50 logos. Team Payback destroyed approximately 10 of them while forming their first clan Discord. It was later disbanded after Kosborei retaliated and nuked the group. The owner gave admin to an insider who then nuked the server and caused it to go inactive.</p>
+
+    <h3>The Rebellion of VOID</h3>
+    <p>After a disagreement between Kosborei's leader NC970 and former council member 5aks over Kosborei voting on every decision rather than allowing high leadership to make choices, 5aks started the clan VOID, inspired by a group from sato86. VOID began griefing Kosborei spawn logos and creating their own with the aid of their ally Cosa Nostra. Cosa Nostra later left the alliance due to Kosborei’s longstanding alliance with Dacia. VOID also griefed one of Kosborei's stashes, leading to a major rift in relations.</p>
+
+    <h3>The Influx to 6B6T</h3>
+    <p>Cosa Nostra started a 6B6T branch with the aid of TSR (The Shadow Reapers), an anti-555 group. 555 was one of Kosborei's early cross-server allies due to NC970 having good relations with Advik555, leader of 555, and both groups participating in the mass war on Colonizadores. The 6B6T branch was later established, and a leadership election between Sillycat and Advik555 took place. The election was highly contested because Advik555 brought 50 Discord members from 555 to vote for him, which Sillycat criticized as consolidating power.</p>
+
+    <h3>TSR Conflict and Aftermath</h3>
+    <p>Long-standing drama occurred between TSR and Kosborei when the Kosborei co-leader made pedophilic jokes in their clan Discord. NC970 and Trojaty exposed the messages publicly, which led the TSR co-leader to threaten suicide, delete their Discord, cut contact with everyone in Anarchy, and self-grief. After the disbandment of VOID, Kosborei and 555 engaged in a mass war against TSR and Cosa Nostra. Eventually, Cosa Nostra became inactive on all servers and disbanded.</p>
+</section>
+
+
+
+<section id="netherbot">
+    <p>These are the current commands, NetherB0T was designed to act as a bot which spanned muiltiple servers working for Kosborei, currently the whitelists are limited to members who joined the Kosborei discord. The fishing/farming and *work commands are just a simple economic system, like dank memer in discord works</p>
 <hr>
 <p><strong>Prefix:</strong> *</p>
 <hr>
@@ -93,5 +172,27 @@ setInterval(changeTextStyles, 1000);
 <p>fishing: ["Salmon", "Trout", "Bass", "Cod", "Tuna", "Mackerel", "Snapper", "Catfish", "Perch", "Pike"];</p> 
 <hr>
 <p>Raritys: Common 40% 1x. Uncommon 10% 2x. Rare 9% 4x. Very rare 1% 10x (numbers before x are multipliers. this applies to *fish and *farm)</p>
+</section>
+
+<section id="nsea">
+    <h2>NSea Client</h2>
+    <p>NSea client was used in the mass creation of spawn logos for Kosborei's spawn projects and other tasks. It included specialty software for anarchy spawn logo brute-forcing and related operations.</p>
+    <figure>
+        <img src="nsea.png" alt="NSea Client Screenshot" style="width:100%; max-width:600px;">
+        <figcaption>NSea client used for Kosborei spawn projects.</figcaption>
+    </figure>
+</section>
+
+<footer>HAIL Kosborei</footer>
+
+<script>
+function showTab(tabId) {
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+    });
+    document.getElementById(tabId).classList.add('active');
+}
+</script>
+
 </body>
 </html>
