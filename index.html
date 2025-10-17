@@ -64,7 +64,97 @@
 
 <section id="info" class="active">
     <p>Kosborei was a group founded in 2023. Currently we span across 5 servers with a track record of never losing 😘</p>
-</section>
+    <p>Media:</p>
+  
+    <div class="media-gallery" id="mediaGallery"></div>
+  </section>
+  
+  <style>
+  .media-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+  }
+  
+  .media-item p {
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .img-wrapper {
+    width: 100%;
+    max-height: 200px; /* uniform height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f0f0f0; /* placeholder background if image smaller */
+  }
+  
+  .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* scale to fit, no cropping */
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .img-wrapper img:hover {
+    transform: scale(1.05); /* subtle zoom effect on hover */
+  }
+  </style>
+  
+  <script>
+  const captions = [
+    "Charlie Kirk shooter having been a member of Kosborei, as NetherB0T is owned by us (check the section we have on it)",
+    "Griefing of our long time rivals Ryo, a competing kitbot",
+    "The 9 chunk obsidian logoes mentioned in history, partially griefed",
+    "Repaired end spawn",
+    "Team Payback (anti maintenance crew) griefing us",
+    "One of our stashes",
+    "Our 3 day illegal block spawn logo",
+    "Spawn logo Kosborei was working on together to develop",
+    "Spawn logo",
+    "Some of our maparts at our base, partially censored due to nsfw imagery later removed",
+    "Spawn render, The Military logo in the middle being built was ours as that was our previous name",
+    "Our finished early stage spawn logo",
+    "Void Griefing of spawn logo (repaired insanely quickly though)",
+    "One of our recruits stats on mining for the spawn logoes",
+    "Griefing of our long time rivals in kitbots InvalidBot, the owner tawan475's account was hacked by Kosborei",
+    "InvalidBot stash",
+    "InvalidBot stash second angle"
+  ];
+  
+  const gallery = document.getElementById("mediaGallery");
+  
+  captions.forEach((caption, index) => {
+    const item = document.createElement("div");
+    item.className = "media-item";
+  
+    const p = document.createElement("p");
+    p.textContent = caption;
+  
+    const wrapper = document.createElement("div");
+    wrapper.className = "img-wrapper";
+  
+    const img = document.createElement("img");
+    img.src = `${index + 1}.png`;
+    img.alt = `Image ${index + 1}`;
+  
+    // Click to open full image in a new tab
+    img.addEventListener("click", () => {
+      window.open(img.src, "_blank");
+    });
+  
+    wrapper.appendChild(img);
+    item.appendChild(p);
+    item.appendChild(wrapper);
+    gallery.appendChild(item);
+  });
+  </script>
+  
+  
 
 <section id="leadership">
     <h2>Leadership</h2>
