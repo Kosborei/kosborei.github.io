@@ -47,6 +47,35 @@
         width: 100%;
         bottom: 0;
     }
+    .media-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 16px;
+    }
+    .media-item p {
+        margin-bottom: 8px;
+        font-weight: 500;
+    }
+    .img-wrapper {
+        width: 100%;
+        max-height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #f0f0f0;
+    }
+    .img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    .img-wrapper img:hover {
+        transform: scale(1.05);
+    }
 </style>
 </head>
 <body>
@@ -57,7 +86,7 @@
     <a href="#" onclick="showTab('info')">Info</a>
     <a href="#" onclick="showTab('leadership')">Leadership</a>
     <a href="#" onclick="showTab('history')">History</a>
-    <a href="#" onclick="showTab('netherbot')">NetherB0T</a>
+    <a href="https://netherb0t.github.io" target="_blank">NetherB0T</a>
     <a href="#" onclick="showTab('nsea')">NSea Client</a>
     <a href="https://discord.gg/TFF7kTY723" target="_blank">Join Discord</a>
 </nav>
@@ -65,96 +94,8 @@
 <section id="info" class="active">
     <p>Kosborei was a group founded in 2023. Currently we span across 5 servers with a track record of never losing 😘</p>
     <p>Media:</p>
-  
     <div class="media-gallery" id="mediaGallery"></div>
-  </section>
-  
-  <style>
-  .media-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 16px;
-  }
-  
-  .media-item p {
-    margin-bottom: 8px;
-    font-weight: 500;
-  }
-  
-  .img-wrapper {
-    width: 100%;
-    max-height: 200px; /* uniform height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border-radius: 8px;
-    background: #f0f0f0; /* placeholder background if image smaller */
-  }
-  
-  .img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* scale to fit, no cropping */
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  
-  .img-wrapper img:hover {
-    transform: scale(1.05); /* subtle zoom effect on hover */
-  }
-  </style>
-  
-  <script>
-  const captions = [
-    "Charlie Kirk shooter having been a member of Kosborei, as NetherB0T is owned by us (check the section we have on it)",
-    "Griefing of our long time rivals Ryo, a competing kitbot",
-    "The 9 chunk obsidian logoes mentioned in history, partially griefed",
-    "Repaired end spawn",
-    "Team Payback (anti maintenance crew) griefing us",
-    "One of our stashes",
-    "Our 3 day illegal block spawn logo",
-    "Spawn logo Kosborei was working on together to develop",
-    "Spawn logo",
-    "Some of our maparts at our base, partially censored due to nsfw imagery later removed",
-    "Spawn render, The Military logo in the middle being built was ours as that was our previous name",
-    "Our finished early stage spawn logo",
-    "Void Griefing of spawn logo (repaired insanely quickly though)",
-    "One of our recruits stats on mining for the spawn logoes",
-    "Griefing of our long time rivals in kitbots InvalidBot, the owner tawan475's account was hacked by Kosborei",
-    "InvalidBot stash",
-    "InvalidBot stash second angle"
-  ];
-  
-  const gallery = document.getElementById("mediaGallery");
-  
-  captions.forEach((caption, index) => {
-    const item = document.createElement("div");
-    item.className = "media-item";
-  
-    const p = document.createElement("p");
-    p.textContent = caption;
-  
-    const wrapper = document.createElement("div");
-    wrapper.className = "img-wrapper";
-  
-    const img = document.createElement("img");
-    img.src = `${index + 1}.png`;
-    img.alt = `Image ${index + 1}`;
-  
-    // Click to open full image in a new tab
-    img.addEventListener("click", () => {
-      window.open(img.src, "_blank");
-    });
-  
-    wrapper.appendChild(img);
-    item.appendChild(p);
-    item.appendChild(wrapper);
-    gallery.appendChild(item);
-  });
-  </script>
-  
-  
+</section>
 
 <section id="leadership">
     <h2>Leadership</h2>
@@ -187,88 +128,35 @@
     <ul>
         <li>Fastvincent1</li>
         <li>Reclamationem</li>
-        <li>Craftin247 (also known as Tyler Robinson; the person who shot Charlie Kirk was a recruit)</li>
+        <li>Craftin247</li>
     </ul>
 </section>
-
 
 <section id="history">
     <h2>History of Kosborei</h2>
 
-    <table class="infobox" style="float: right; margin-left: 20px; width: 250px;">
+    <table class="infobox" style="float:right;margin-left:20px;width:250px;">
         <tr>
-            <th colspan="2"><img src="logo.png" alt="Kosborei Logo" style="width:100%;"></th>
+            <th colspan="2"><img src="logo.png" style="width:100%;"></th>
         </tr>
-        <tr>
-            <th>Founded</th>
-            <td>3 years ago</td>
-        </tr>
-        <tr>
-            <th>Membership</th>
-            <td>750+</td>
-        </tr>
-        <tr>
-            <th>Alliances</th>
-            <td>Dacia, 555, Imperials, Mafiarusa</td>
-        </tr>
-        <tr>
-            <th>Enemies</th>
-            <td>Team Payback, Void, TSR, Cosa Nostra, Spawn Masons</td>
-        </tr>
-        <tr>
-            <th>Server Presence</th>
-            <td>8B8T, 6B6T, 0B0T, 2B2T, Constantiam</td>
-        </tr>
+        <tr><th>Founded</th><td>3 years ago</td></tr>
+        <tr><th>Membership</th><td>750+</td></tr>
+        <tr><th>Alliances</th><td>Dacia, 555, Imperials, Mafiarusa</td></tr>
+        <tr><th>Enemies</th><td>Team Payback, Void, TSR, Cosa Nostra, Spawn Masons</td></tr>
+        <tr><th>Server Presence</th><td>8B8T, 6B6T, 0B0T, 2B2T, Constantiam</td></tr>
     </table>
 
-    <p>Kosborei has a long history from its founding three years ago. There have been many groups opposing it from the beginning. It started as a group to maintain spawn due to a mass influx of new players attempting to start their own groups or grief/repair spawn. This massively disrupted the balance in spawn, as Kosborei repaired the majority of areas and took over spawn with custom logos.</p>
-
-    <h3>First War on Payback</h3>
-    <p>Kosborei was attacked by a newgen group named Team Payback. They attempted to grief the Kosborei End logo when it was formally known as Mischief/Military, featuring a giant "M" logo in End spawn made from nine-chunk blocks of obsidian and crying obsidian, with around 50 logos. Team Payback destroyed approximately 10 of them while forming their first clan Discord. It was later disbanded after Kosborei retaliated and nuked the group. The owner gave admin to an insider who then nuked the server and caused it to go inactive.</p>
-
-    <h3>The Rebellion of VOID</h3>
-    <p>After a disagreement between Kosborei's leader NC970 and former council member 5aks over Kosborei voting on every decision rather than allowing high leadership to make choices, 5aks started the clan VOID, inspired by a group from sato86. VOID began griefing Kosborei spawn logos and creating their own with the aid of their ally Cosa Nostra. Cosa Nostra later left the alliance due to Kosborei’s longstanding alliance with Dacia. VOID also griefed one of Kosborei's stashes, leading to a major rift in relations.</p>
-
-    <h3>The Influx to 6B6T</h3>
-    <p>Cosa Nostra started a 6B6T branch with the aid of TSR (The Shadow Reapers), an anti-555 group. 555 was one of Kosborei's early cross-server allies due to NC970 having good relations with Advik555, leader of 555, and both groups participating in the mass war on Colonizadores. The 6B6T branch was later established, and a leadership election between Sillycat and Advik555 took place. The election was highly contested because Advik555 brought 50 Discord members from 555 to vote for him, which Sillycat criticized as consolidating power.</p>
-
-    <h3>TSR Conflict and Aftermath</h3>
-    <p>Long-standing drama occurred between TSR and Kosborei when the Kosborei co-leader made pedophilic jokes in their clan Discord. NC970 and Trojaty exposed the messages publicly, which led the TSR co-leader to threaten suicide, delete their Discord, cut contact with everyone in Anarchy, and self-grief. After the disbandment of VOID, Kosborei and 555 engaged in a mass war against TSR and Cosa Nostra. Eventually, Cosa Nostra became inactive on all servers and disbanded.</p>
+    <p>Kosborei has a long history from its founding three years ago...</p>
 </section>
 
-
-
 <section id="netherbot">
-    <p>These are the current commands, NetherB0T was designed to act as a bot which spanned muiltiple servers working for Kosborei, currently the whitelists are limited to members who joined the Kosborei discord. The fishing/farming and *work commands are just a simple economic system, like dank memer in discord works</p>
-<hr>
-<p><strong>Prefix:</strong> *</p>
-<hr>
-<p><strong>Kits:</strong> kit</p>
-<hr>
-<p><strong>Economy:</strong> work. crime. balance. pay (username) (amount). coinflip (bet). fish. farm</p>
-<hr>
-<p><strong>Movement:</strong> tpa. tpy</p>
-<hr>
-<p><strong>Information:</strong> help. ping. servers. dupe. dox (username). coords. addfact (fact). fact</p>
-<hr>
-<p><strong>Misc:</strong> tps. gay (username). drop. kill. insult (username)</p>
-<hr>
-<p><strong>*credits</strong></p>
-<hr>
-<p><strong>fishing and farming drops 🗣️🔥</strong></p>
-<hr>
-<p>farming: ["Tomato", "Carrot", "Lettuce", "Potato", "Strawberry", "Cucumber", "Spinach", "Corn", "Bell Pepper", "Broccoli"];</p>
-<hr>
-<p>fishing: ["Salmon", "Trout", "Bass", "Cod", "Tuna", "Mackerel", "Snapper", "Catfish", "Perch", "Pike"];</p> 
-<hr>
-<p>Raritys: Common 40% 1x. Uncommon 10% 2x. Rare 9% 4x. Very rare 1% 10x (numbers before x are multipliers. this applies to *fish and *farm)</p>
 </section>
 
 <section id="nsea">
     <h2>NSea Client</h2>
-    <p>NSea client was used in the mass creation of spawn logos for Kosborei's spawn projects and other tasks. It included specialty software for anarchy spawn logo brute-forcing and related operations.</p>
+    <p>NSea client was used in the mass creation of spawn logos for Kosborei's spawn projects and other tasks.</p>
     <figure>
-        <img src="nsea.png" alt="NSea Client Screenshot" style="width:100%; max-width:600px;">
+        <img src="nsea.png" style="width:100%;max-width:600px;">
         <figcaption>NSea client used for Kosborei spawn projects.</figcaption>
     </figure>
 </section>
@@ -282,6 +170,49 @@ function showTab(tabId) {
     });
     document.getElementById(tabId).classList.add('active');
 }
+
+const captions = [
+    "Charlie Kirk shooter having been a member of Kosborei",
+    "Griefing of rivals Ryo",
+    "Obsidian logos",
+    "Repaired end spawn",
+    "Team Payback griefing",
+    "One of our stashes",
+    "Illegal block spawn logo",
+    "Spawn logo development",
+    "Spawn logo",
+    "Maparts at base",
+    "Spawn render",
+    "Finished spawn logo",
+    "Void griefing",
+    "Recruit mining stats",
+    "InvalidBot grief",
+    "InvalidBot stash",
+    "InvalidBot stash second angle"
+];
+
+const gallery = document.getElementById("mediaGallery");
+
+captions.forEach((caption, index) => {
+    const item = document.createElement("div");
+    item.className = "media-item";
+
+    const p = document.createElement("p");
+    p.textContent = caption;
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "img-wrapper";
+
+    const img = document.createElement("img");
+    img.src = `${index + 1}.png`;
+
+    img.onclick = () => window.open(img.src, "_blank");
+
+    wrapper.appendChild(img);
+    item.appendChild(p);
+    item.appendChild(wrapper);
+    gallery.appendChild(item);
+});
 </script>
 
 </body>
